@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+
+
+typedef struct{
+  char nome_banda[5] [21];
+  char tipo_musica [5] [21];
+  int integrantes [5];
+  int ranking [5];
+}Bandas;
+
+void preencher (Bandas* preenc){
+  int i = 4;
+  while(i >= 0){
+  printf("Digite aqui o nome de uma banda:");
+  fgets(preenc->nome_banda[i], 20, stdin);
+  setbuf(stdin,NULL);
+  printf("Digite aqui o estilo musical:");
+  fgets(preenc->tipo_musica[i], 20, stdin);
+  setbuf(stdin,NULL);
+  printf("Digite aqui a quantidade de integrantes:");
+  scanf("%d",&preenc ->integrantes [i]);
+  setbuf(stdin,NULL);
+  printf("Digite aqui o ranking da banda:");
+  scanf("%d",&preenc ->ranking [i]);
+  setbuf(stdin,NULL);
+  i--;
+}
+  for(i = 4; i >= 0;i--){
+    printf("Banda: %s",preenc->nome_banda[i]);
+    printf("Estilo musical: %s",preenc->tipo_musica[i]);
+    printf("Integrantes: %d\n",preenc ->integrantes [i]);
+    printf("Ranking: %d\n",preenc ->ranking [i]);
+}
+}
+
+  void escolha(Bandas* opcao){
+    int numero;
+    int inicio = 0;
+    printf("Digite aqui um número entre 1 e 5 do ranking:");
+    scanf("%i",&numero);
+    if(numero < 0 || numero > 6){
+      return;
+    }else{
+      while(opcao ->ranking [inicio] != numero){
+        inicio++;
+      }
+      numero = inicio;
+    printf("Banda: %s",opcao->nome_banda[numero]);
+    printf("Estilo musical: %s",opcao->tipo_musica[numero]);
+    printf("Integrantes: %d\n",opcao ->integrantes [numero]);
+    printf("Ranking: %d\n",opcao ->ranking [numero]);
+  }
+  }
+int main(){
+  char estilo [21];
+  Bandas Banda;
+  Bandas opcao;
+  preencher(&Banda);
+
+  opcao = Banda;
+
+  escolha(&opcao);
+
+  return 0;
+}
