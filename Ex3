@@ -1,0 +1,37 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int Potencia(int x, int y, int i){
+
+  if(y > 1){
+    x *= i;//conta para a potencia
+    y--;
+    Potencia (x, y, i);
+  }else{
+    if(y == 0){
+      return 1;
+    }else{
+    return x;
+  }//else
+}//else
+}//int potencia
+
+int main(){
+
+  int x;
+  int y;
+  int i;//i será um espelho de x para que tenha o mesmo numero para multiplicar
+  int result;
+
+  printf("Digite um valor de x: ");
+  scanf("%d",&x);
+  printf("Digite um valor de y: ");
+  scanf("%d",&y);
+
+  i = x;//igualando i ao x
+
+  result = Potencia(x,y,i);
+
+  printf("%d\n",result);
+  return 0;
+}
