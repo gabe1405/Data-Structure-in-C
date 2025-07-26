@@ -6,7 +6,6 @@
 #include <ctype.h>
 
 //Não tive muito tempo para trabalhar nesse código
-//Fiz o que eu consegui
 
 FILE *arquivo_entrada;
 FILE *arquivo_saida;
