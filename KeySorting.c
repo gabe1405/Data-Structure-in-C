@@ -5,7 +5,6 @@
 FILE *arquivo_entrada;
 FILE *arquivo_saida;
 
-//Não consegui fazer o arquivo ordenar, desculpa não entregar tudo.
 
 
 typedef struct {
